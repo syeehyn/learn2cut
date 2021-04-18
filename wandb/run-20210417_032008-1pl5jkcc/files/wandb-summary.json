@@ -1,0 +1,1 @@
+{"Training reward": 0.6311876788827249, "_runtime": 847, "_timestamp": 1618644860, "_step": 39, "parameters": {"lr": 0.001, "gamma": 0.95, "num_revisit": 1, "entropy_coef": 0, "num_layers": 1, "method": "general", "dropout": 0.1}}
