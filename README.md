@@ -2,10 +2,47 @@
 Instructor: Professor Shipra Agrawal\
 Assistants: Yunhao Tang, Abhi Gupta
 
+## Source Code Description
+
+```bash
+├── attention_policyNet #source code for attention policyNet
+│   ├── policy.py
+│   └── policy_roller.py 
+├── base_policyNet #source code for base (CNN) policyNet
+│   ├── policy.py
+│   └── policy_roller.py
+└── seq2seq_policyNet #source code for seq2seq policyNet
+    ├── policy.py
+    └── policy_roller.py
+```
+
+## Report Generation Process
+
+1. train the policy networks
+    ```
+    # train different models, save them to ./trained_models.py, save the ./log/log.json
+    >>> python train.py -m <easy | hard> -n<Number of trajectories> -a<attention | seq2seq> -i<Number of iterations to train>
+    >>> python train.py ...
+    >>> python train.py ...
+    >>> python train.py ...
+    ```
+2. download training curve log from wandb save to `./log/wandb_res.csv`
+3. run notebook @ `./notebook/model_selection.ipynb`  to perform model selection process.
+4. run notebook @ `./notebook/random_results.ipynb` to generate results of random policy.
+5. run notebook @ `./notebook/attention_policy_inference.ipynb` to generate inference results of attention policy network.
+6. run notebook @ `./notebook/seq2seq_policy_inference.ipynb` to generate inference results of seq2seq policy network.
+6. run notebook @ `./notebook/experiment_results.ipynb` to table and charts.
+
+
+
+
 ## Installation
 The only dependency is gurobipy. You can install gurobipy into your `ieor4575` conda environment:
 
 ```
+$ pip install wandb
+$ pip install torch torchvision torchaudio
+$ pip install numpy
 $ conda install -c gurobi gurobi
 ```
 
@@ -14,9 +51,6 @@ In addition, you need an academic license from gurobi. After getting the license
 (https://www.gurobi.com/downloads/end-user-license-agreement-academic/)
 
  In order to activate the license, you will need to run the **grbgetkey** command with the license key written there. After this step, you can use the `ieor4575` environment that you have used for labs to complete the class project.
-
-## WandB for Visualizaition
-Class labs have made extensive use of wandb to familiarize you with some great machine learning visualization tools. You are encouraged to use wandb in the development of this project. We will soon provide further information about leaderboard for the project.
 
 ## State-Action Description
 
@@ -27,11 +61,7 @@ State s is an array with give components
 * s[2]: coefficient vector $c$ from the LP objective ($-c^Tx$). Dimension same as the number of variables, i.e., $n$.
 * s[3],  s[4]: Gomory cuts available in the current round of Gomory's cutting plane algorithm. Each cut $i$ is of the form $D_i x\le d_i$.   s[3] gives the matrix $D$ (of dimension $k \times n$) of cuts and s[4] gives the rhs $d$ (of dimension $k$). The number of cuts $k$ available in each round changes, you can find it out by printing the size of last component of state, i.e., s[4].size or s[-1].size.
 
-## Example
-You can use the following script to familiarize yourself with the cutting plane environment that we have built for you. 
-```
-$ python example.py
-```
+
 
 ## Training Performance Evaluation
 There are two environment settings on which your training performance will be evaluated. These can be loaded by using the following two configs (see example.py). Each mode is characterized by a set of parameters that define the cutting plane environment.

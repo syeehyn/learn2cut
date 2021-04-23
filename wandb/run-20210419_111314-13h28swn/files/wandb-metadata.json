@@ -1,0 +1,27 @@
+{
+    "os": "Darwin-20.3.0-x86_64-i386-64bit",
+    "python": "3.6.12",
+    "heartbeatAt": "2021-04-19T15:13:21.222106",
+    "startedAt": "2021-04-19T15:13:14.358872",
+    "docker": null,
+    "cpu_count": 16,
+    "cuda": null,
+    "args": [
+        "-m",
+        "easy",
+        "-n",
+        "12"
+    ],
+    "state": "running",
+    "program": "run_attention_1.py",
+    "codePath": "run_attention_1.py",
+    "git": {
+        "remote": "https://github.com/syeehyn/learn2cut.git",
+        "commit": "4808366fc8ff8243d25b2bcf13fac9aa00af3959"
+    },
+    "email": "32397155+syeehyn@users.noreply.github.com",
+    "root": "/Users/syeehyn/Desktop/spring2020/ieor4575/project/learn2cut",
+    "host": "Jiekies-MBP.lan",
+    "username": "syeehyn",
+    "executable": "/Users/syeehyn/opt/anaconda3/envs/ieor4575/bin/python"
+}
