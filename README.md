@@ -18,7 +18,7 @@ Assistants: Yunhao Tang, Abhi Gupta
     └── policy_roller.py
 ```
 
-## Report Generation Process
+## Report Generating Process
 
 1. train the policy networks
     ```
