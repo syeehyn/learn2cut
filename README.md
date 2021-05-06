@@ -1,4 +1,6 @@
-# IEOR4575 Project
+# Learn2cut
+
+## IEOR4575 Project at Columbia University
 Instructor: Professor Shipra Agrawal\
 Assistants: Yunhao Tang, Abhi Gupta
 
