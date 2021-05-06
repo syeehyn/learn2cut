@@ -1,1 +1,0 @@
-{"Training reward": 0.4315471380209601, "movingAverage": 0.5045708242034834, "_runtime": 1558, "_timestamp": 1618806300, "_step": 19, "args": {"lr": 0.1, "arch": [32, 64, 32], "gamma": 0.99, "sigma": 0.001, "dropout": 0.5, "num_revisit": 3, "model_id": "90e11498-a0c3-11eb-9450-acde48001122.pt", "mode": "training-hard", "best_reward": 0.779723043541253}}
